@@ -11,11 +11,11 @@ async def check(ctx, *, link):
     try:
         r = requests.head(link, allow_redirects=True)
         result = "Link Trace Results:\n"
-        print(r.url)
+        index = 0
         for hist in r.history:
-            result += ("- <" + hist.url + ">\n")
-            print(hist.url)
-        result += ("- <" + r.url + ">\n")
+            result += (f"{r.history[index]} - <" + hist.url + ">\n")
+            index += 1
+        result += (f"Destination ({r}) - <" + r.url + ">\n")
         await ctx.send(result)
     except:
         ...
