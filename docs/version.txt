@@ -1,0 +1,7 @@
+```
+Link Checker Discord Bot v0.1
+
+A Discord bot which traces where a URL redirects to help you make sure you aren't visiting a sketchy/malicious link that could potentially download a virus or grab your IP.
+
+(c) 2021 Ethan (waitblock). All rights reserved.
+```

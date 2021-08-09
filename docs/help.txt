@@ -1,0 +1,11 @@
+```
+Prefixes: 'l!', 'link ', 'l?', 'link?', 'link!'
+------------------------------------------------
+Invocation Example: [prefix][command]
+------------------------------------------------
+Commands:
+
+check: Check where a URL redirects
+help: Show this help
+version: Display the version and copyright information
+```
