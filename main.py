@@ -7,7 +7,18 @@ import traceback
 bot = commands.Bot(("l!", "link ", "l?", "link?", "link!"), case_insensitive=True, help_command=None)
 
 
-@bot.command(name="check", aliases=['check_link', 'checklink', 'linkcheck', 'link_check', 'trace', 'trace_link', 'tracelink'])
+@bot.command(name="help", aliases=["bothelp"])
+async def bot_help(ctx):
+    with open(os.path.join("docs", "help.txt"), "r") as f:
+        await ctx.send(f.read())
+
+
+@bot.command(name="ping", aliases=["botping"])
+async def ping(ctx):
+    await ctx.send(f"Pong! {round(bot.latency*100, 2)}ms")
+
+
+@bot.command(name="trace", aliases=['check', 'check_link', 'checklink', 'linkcheck', 'link_check', 'trace_link', 'tracelink'])
 async def check(ctx, *, link):
     try:
         r = requests.head(link, allow_redirects=True)
@@ -24,17 +35,6 @@ async def check(ctx, *, link):
         await ctx.send("The URL refused to connect.")
     except:
         await ctx.send("An error occurred.")
-
-
-@bot.command(name="help", aliases=["bothelp"])
-async def bot_help(ctx):
-    with open(os.path.join("docs", "help.txt"), "r") as f:
-        await ctx.send(f.read())
-
-
-@bot.command(name="ping", aliases=["botping"])
-async def ping(ctx):
-    await ctx.send(f"Pong! {round(bot.latency*100, 2)}ms")
 
 
 @bot.command(name="version", aliases=["botversion"])

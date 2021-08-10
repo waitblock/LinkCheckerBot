@@ -5,8 +5,8 @@ Invocation Example: [prefix][command]
 ------------------------------------------------
 Commands:
 
-check: Check where a URL redirects
 help: Show this help
 ping: Check bot latency
+trace: Trace where a URL will redirect
 version: Display the version and copyright information
 ```
