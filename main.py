@@ -33,8 +33,8 @@ async def check(ctx, *, link):
         await ctx.send("Try adding http:// to the front of the link.")
     except requests.exceptions.ConnectionError:
         await ctx.send("The URL refused to connect.")
-    except:
-        await ctx.send("An error occurred.")
+    except discord.ext.commands.errors.MissingRequiredArgument:
+        await ctx.send("Link was not provided.")
 
 
 @bot.command(name="version", aliases=["botversion"])
