@@ -1,3 +1,6 @@
+![Travis CI Build](https://api.travis-ci.com/waitblock/LinkCheckerBot.svg?branch-main)
+[![Appveyor Build](https://ci.appveyor.com/api/projects/status/4bmtx8d5x0e99bvf?svg=true)](https://ci.appveyor.com/project/waitblock/linkcheckerbot)
+
 # Link Checker Discord Bot
 
 A Discord bot which traces where a URL redirects to help you make sure you aren't visiting a sketchy/malicious link that could potentially download a virus or grab your IP.
