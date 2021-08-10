@@ -2,11 +2,13 @@ import discord
 import os
 import requests
 from discord.ext import commands
+from boto.s3.connection import S3Connection
 
 bot = commands.Bot(("l!", "link ", "l?", "link?", "link!"), case_insensitive=True, help_command=None)
 
 
-@bot.command(name="check", aliases=['check_link', 'checklink', 'linkcheck', 'link_check', 'trace', 'trace_link', 'tracelink'])
+@bot.command(name="check",
+             aliases=['check_link', 'checklink', 'linkcheck', 'link_check', 'trace', 'trace_link', 'tracelink'])
 async def check(ctx, *, link):
     try:
         r = requests.head(link, allow_redirects=True)
@@ -38,6 +40,6 @@ async def on_connect():
     print("Bot connected to Discord API")
     await bot.change_presence(activity=discord.Game(name="For help type link!help"))
 
-with open("token", "r") as tok:
-    token = tok.read()
-    bot.run(token)
+
+token = S3Connection(os.environ['token'])
+bot.run(token)
