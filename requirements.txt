@@ -1,3 +1,2 @@
 discord~=1.0.1
 requests~=2.25.1
-boto~=2.49.0
