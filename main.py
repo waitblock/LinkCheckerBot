@@ -2,7 +2,6 @@ import discord
 import os
 import requests
 from discord.ext import commands
-import traceback
 
 bot = commands.Bot(("l!", "link ", "l?", "link?", "link!"), case_insensitive=True, help_command=None)
 
