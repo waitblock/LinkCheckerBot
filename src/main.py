@@ -59,4 +59,5 @@ async def on_connect():
     print("Bot connected to Discord API")
     await bot.change_presence(activity=discord.Game(name="For help type link!help"))
 
-bot.run(os.getenv("token"))
+with open("TOKEN", "r") as token:
+    bot.run(token.read())
