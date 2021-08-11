@@ -1,7 +1,13 @@
 import discord
 import os
+import json
 import requests
 from discord.ext import commands
+
+
+with open("config.json", "r") as config_file:
+    blacklisted_sites = json.load(config_file)['blacklisted-sites']
+
 
 bot = commands.Bot(("l!", "link ", "l?", "link?", "link!"), case_insensitive=True, help_command=None)
 
@@ -23,10 +29,16 @@ async def check(ctx, *, link):
         r = requests.head(link, allow_redirects=True)
         result = "Link Trace Results:\n"
         index = 0
+        contains_blacklisted = False
         for hist in r.history:
+            for site in blacklisted_sites:
+                if site in hist.url:
+                    contains_blacklisted = True
             result += (f"{r.history[index]} - <" + hist.url + ">\n")
             index += 1
         result += (f"Destination ({r}) - <" + r.url + ">\n")
+        if contains_blacklisted is True:
+            result += "```css\n⚠️ [Malicious Link(s) Detected During Trace]```\n"
         await ctx.send(result)
     except requests.exceptions.MissingSchema:
         await ctx.send("Try adding http:// to the front of the link.")
