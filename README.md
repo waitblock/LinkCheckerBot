@@ -16,4 +16,9 @@ However, you may use the source code of this project to host the bot yourself.
 
 See the [src/help.txt](https://github.com/waitblock/LinkCheckerBot/blob/main/src/help.txt) file for more information.
 
+## Installing
+
+If you are using Linux, you can use [this script](https://raw.githubusercontent.com/waitblock/LinkCheckerBot/main/scripts/install.sh) to download the project and install all the required tools and dependencies.
+(Note: You will need to put a token inside the TOKEN file.)
+
 ### [Public Invite Link](https://discord.com/oauth2/authorize?client_id=874390266193260594&permissions=34360085568&scope=bot) (The bot will likely be offline.)
