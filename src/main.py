@@ -12,6 +12,20 @@ with open("config.json", "r") as config_file:
 bot = commands.Bot(("l!", "link ", "l?", "link?", "link!"), case_insensitive=True, help_command=None)
 
 
+@bot.command(name="code", aliases=["statuscode", "httpcode", "responsecode"])
+async def code(ctx, *, status_code):
+    try:
+        with open(os.path.join("status_codes", status_code + ".txt")) as status:
+            result = status.read()
+    except FileNotFoundError:
+        with open(os.path.join("status_codes", "invalid_code.txt"), "r") as invalid:
+            result = invalid.read()
+    if status_code == "ATTRIBUTION" or status_code == "LICENSE" or status_code == "invalid_code":
+        with open(os.path.join("status_codes", "invalid_code.txt"), "r") as invalid:
+            result = invalid.read()
+    await ctx.send(result)
+
+
 @bot.command(name="help", aliases=["bothelp"])
 async def bot_help(ctx):
     with open("help.txt", "r") as f:

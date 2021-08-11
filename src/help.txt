@@ -1,12 +1,13 @@
 ```
 Prefixes: 'l!', 'link ', 'l?', 'link?', 'link!'
 ------------------------------------------------
-Invocation Example: [prefix][command]
+Invocation Example: [prefix][command] [args]
 ------------------------------------------------
 Commands:
 
-help: Show this help
-ping: Check bot latency
-trace: Trace where a URL will redirect
-version: Display the version and copyright information
+code: Display what an HTTP response status code means (args: status_code [int])
+help: Display this help (args: None)
+ping: Check bot latency (args: None)
+trace: Trace where a URL will redirect (args: link [str])
+version: Display the version and copyright information (args: None)
 ```
