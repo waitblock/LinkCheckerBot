@@ -1,5 +1,5 @@
 # This script is meant for use on Ubuntu.
-# With some modifications it will probably work on other Linux distributions.
+# It probably works on other distributions of Linux, but I have not tested compatibility.
 
 if ! command -v git &> /dev/null
 then
