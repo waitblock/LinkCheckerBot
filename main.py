@@ -20,7 +20,7 @@ async def bot_help(ctx):
 
 @bot.command(name="ping", aliases=["botping"])
 async def ping(ctx):
-    await ctx.send(f"Pong! {round(bot.latency*100, 2)}ms")
+    await ctx.send(f":ping_pong: Pong! {round(bot.latency*100, 2)}ms")
 
 
 @bot.command(name="trace", aliases=['check', 'check_link', 'checklink', 'linkcheck', 'link_check', 'trace_link', 'tracelink'])
