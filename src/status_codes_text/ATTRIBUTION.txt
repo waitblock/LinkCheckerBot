@@ -1,0 +1,5 @@
+Original Author: Mozilla Foundation (https://foundation.mozilla.org/en/)
+Original Source Link: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status#information_responses
+Were Changes Made: Yes
+
+Disclaimer: This project is not in affiliation with the Mozilla Foundation.
