@@ -8,3 +8,6 @@ environment:
   - TOXENV: py38
 
 build: off
+
+install:
+- pip install -r requirements.txt
