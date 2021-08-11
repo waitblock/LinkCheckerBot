@@ -14,7 +14,7 @@ bot = commands.Bot(("l!", "link ", "l?", "link?", "link!"), case_insensitive=Tru
 
 @bot.command(name="help", aliases=["bothelp"])
 async def bot_help(ctx):
-    with open(os.path.join("docs", "help.txt"), "r") as f:
+    with open("help.txt", "r") as f:
         await ctx.send(f.read())
 
 
@@ -50,7 +50,7 @@ async def check(ctx, *, link):
 
 @bot.command(name="version", aliases=["botversion"])
 async def bot_version(ctx):
-    with open(os.path.join("docs", "version.txt"), "r") as f:
+    with open("version.txt", "r") as f:
         await ctx.send(f.read())
 
 
