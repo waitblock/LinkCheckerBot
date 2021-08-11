@@ -14,6 +14,6 @@ However, you may use the source code of this project to host the bot yourself.
 
 ## Commands
 
-See the [docs/help.txt](https://github.com/waitblock/LinkCheckerBot/blob/main/docs/help.txt) file for more information.
+See the [src/help.txt](https://github.com/waitblock/LinkCheckerBot/blob/main/src/help.txt) file for more information.
 
 ### [Public Invite Link](https://discord.com/oauth2/authorize?client_id=874390266193260594&permissions=34360085568&scope=bot) (The bot will likely be offline.)
