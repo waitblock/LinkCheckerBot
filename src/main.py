@@ -2,36 +2,11 @@ import json
 import os
 
 import discord
-import pandas as pd
 import requests
 from discord.ext import commands
-from sklearn.linear_model import SGDClassifier
 
 with open("config.json", "r") as config_file:
     blacklisted_sites = json.load(config_file)['blacklisted-sites']
-
-
-df = pd.read_csv(os.path.join("training_data", "data.csv"), header=0)
-headers = list(df.columns.values)
-raw_data = df.values
-
-x = []
-y = []
-
-for i in range(len(raw_data)):
-    x.append(raw_data[i][0])
-    y.append(raw_data[i][1])
-
-x_train, x_test, y_train, y_test = x[:320000], x[320000:], y[:320000], y[:320000]
-y_train_bad = []
-
-for i in range(len(y_train)):
-    if y_train[i] == 'good':
-        y_train_bad.append(False)
-    if y_train[i] == 'bad':
-        y_train_bad.append(True)
-
-sgd_clf = SGDClassifier(random_state=42)
 
 
 bot = commands.Bot(("l!", "link ", "l?", "link?", "link!"), case_insensitive=True, help_command=None)
