@@ -1,12 +1,15 @@
 import json
 import os
+import sys
 
 import discord
 import requests
 from discord.ext import commands
 
 with open("config.json", "r") as config_file:
-    blacklisted_sites = json.load(config_file)['blacklisted-sites']
+    config = json.load(config_file)['config']
+    blacklisted_sites = config['blacklisted-sites']
+    owner_id = int(config['owner-id'])
 
 
 bot = commands.Bot(("l!", "link ", "l?", "link?", "link!"), case_insensitive=True, help_command=None)
@@ -62,6 +65,14 @@ async def check(ctx, *, link):
         await ctx.send("Link was not provided.")
 
 
+@bot.command(name="shutdown", aliases=["quit", "botshutdown", "botquit", "quitbot", "shutdownbot"])
+async def shutdown(ctx):
+    if ctx.message.author.id == owner_id:
+        await ctx.send("Shutting down bot...")
+        print("Shutting down...")
+        sys.exit(0)
+
+
 @bot.command(name="version", aliases=["botversion"])
 async def bot_version(ctx):
     with open("version.txt", "r") as f:
@@ -71,6 +82,7 @@ async def bot_version(ctx):
 @bot.event
 async def on_connect():
     print("Bot connected to Discord API")
+    print(f"Owner is set as user {owner_id}")
     await bot.change_presence(activity=discord.Game(name="For help type link!help"))
 
 with open("TOKEN", "r") as token:

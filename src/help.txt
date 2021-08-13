@@ -8,6 +8,7 @@ Commands:
 code: Display what an HTTP response status code means (args: status_code [int])
 help: Display this help (args: None)
 ping: Check bot latency (args: None)
+shutdown: Shutdown the bot (args: None) (This command can only be used by the bot owner.)
 trace: Trace where a URL will redirect (args: link [str])
 version: Display the version and copyright information (args: None)
 ```

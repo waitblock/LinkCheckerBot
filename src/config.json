@@ -1,8 +1,12 @@
-{
-  "blacklisted-sites": ["https://grabify.link",
-                        "http://grabify.link",
-                        "https://iplogger.org",
-                        "http://iplogger.org",
-                        "https://blasze.com",
-                        "http://blasze.com"]
+{"config": {
+  "blacklisted-sites": [
+    "https://grabify.link",
+    "http://grabify.link",
+    "https://iplogger.org",
+    "http://iplogger.org",
+    "https://blasze.com",
+    "http://blasze.com"
+  ],
+  "owner-id": "785591018342580254"
+}
 }
