@@ -33,6 +33,7 @@ mv LinkCheckerBot link-checker-bot
 
 # create a file for the token
 touch link-checker-bot/src/TOKEN
+touch link-checker-bot/src/API_KEY
 
 echo "Downloading dependencies..."
 pip3 install discord==1.7.3 requests==2.21.0 pysafebrowsing==0.1.1

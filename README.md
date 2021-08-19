@@ -21,7 +21,9 @@ See the [src/help.txt](https://github.com/waitblock/LinkCheckerBot/blob/main/src
 ## Installing
 
 If you are using Linux, you can use [this script](https://raw.githubusercontent.com/waitblock/LinkCheckerBot/main/scripts/install.sh) to download the project and install all the required tools and dependencies.
-(Note: You will need to put a token inside the TOKEN file, and modify the `owner-id` in the config.json file.)
+(Note: You will need to put a token inside the TOKEN file, put a Safe Browsing API Key in the API_KEY file, and modify the `owner-id` in the config.json file.)
+
+*Don't have a Safe Browsing API Key?* See this page for information on obtaining an API Key: https://cloud.google.com/docs/authentication/api-keys?hl=en
 
 ### [Public Invite Link](https://discord.com/oauth2/authorize?client_id=874390266193260594&permissions=34360085568&scope=bot)
 ### [Bot Status](https://linkcheckerbot.statuspage.io/)
