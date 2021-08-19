@@ -35,5 +35,5 @@ mv LinkCheckerBot link-checker-bot
 touch link-checker-bot/src/TOKEN
 
 echo "Downloading dependencies..."
-pip3 install discord==1.7.3 requests==2.21.0
+pip3 install discord==1.7.3 requests==2.21.0 pysafebrowsing==0.1.1
 

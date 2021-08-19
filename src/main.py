@@ -5,11 +5,15 @@ import sys
 import discord
 import requests
 from discord.ext import commands
+from pysafebrowsing import SafeBrowsing
 
 with open("config.json", "r") as config_file:
     config = json.load(config_file)['config']
     blacklisted_sites = config['blacklisted-sites']
     owner_id = int(config['owner-id'])
+
+with open("API_KEY", "r") as api_key:
+    safe_browsing = SafeBrowsing(api_key.read())
 
 
 bot = commands.Bot(("l!", "link ", "l?", "link?", "link!"), case_insensitive=True, help_command=None)
